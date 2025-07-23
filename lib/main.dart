@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:image_gallery_app/screen/details.dart';
-import 'package:image_gallery_app/screen/gallery.dart';
-import 'package:image_gallery_app/screen/profile.dart';
+// import 'package:image_gallery_app/screen/details.dart';
+import 'package:image_gallery_app/widget/gallery.dart';
+import 'package:image_gallery_app/widget/profile.dart';
 
 void main() {
   runApp(const MainApp());
@@ -15,17 +15,17 @@ class MainApp extends StatefulWidget {
 }
 
 class _MainAppState extends State<MainApp> {
-  int _selectedIndex = 2;
+  int _selectedIndex = 0;
   final List<Widget> _pages = const [
     Gallery(),
-    Detail(),
+    // Detail(),
     Profile(),
     // Add other pages here if needed
   ];
 
   final List<NavigationDestination> navigationDestinationList = [
     NavigationDestination(icon: Icon(Icons.image), label: 'Gallery'),
-    NavigationDestination(icon: Icon(Icons.details), label: 'Details'),
+    // NavigationDestination(icon: Icon(Icons.details), label: 'Details'),
     NavigationDestination(icon: Icon(Icons.person), label: 'Profile'),
   ];
 
