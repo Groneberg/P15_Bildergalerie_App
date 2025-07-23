@@ -9,7 +9,7 @@ class DetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Gallery'),
+        title: Text('Details'),
         backgroundColor: Color.fromRGBO(167, 19, 19, 1.0),
         foregroundColor: Color.fromRGBO(193, 199, 48, 1.0),
       ),

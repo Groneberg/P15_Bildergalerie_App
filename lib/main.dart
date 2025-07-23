@@ -33,7 +33,7 @@ class _MainAppState extends State<MainApp> {
         AppBar(
           title: Text('Profile'),
           backgroundColor: Color.fromRGBO(193, 199, 48, 1.0),
-          foregroundColor: Color.fromRGBO(43,83,167, 1.0),
+          foregroundColor: Color.fromRGBO(167, 19, 19, 1.0),
         )];
 
   void onDestinationSelected(int index) {
@@ -49,10 +49,33 @@ class _MainAppState extends State<MainApp> {
       home: Scaffold(
         appBar: appBarList[_selectedIndex],
         body: _pages[_selectedIndex],
-        bottomNavigationBar: NavigationBar(
-          onDestinationSelected: onDestinationSelected,
-          selectedIndex: _selectedIndex,
-          destinations: navigationDestinationList,
+        bottomNavigationBar: NavigationBarTheme(
+          data: NavigationBarThemeData(
+            indicatorColor: Color.fromRGBO(193, 199, 48, 1.0),
+            iconTheme: WidgetStateProperty.resolveWith((states) {
+            // Wenn das Element ausgewählt ist, verwende die gelbgrüne Farbe
+            if (states.contains(WidgetState.selected)) {
+              return IconThemeData(color: Color.fromRGBO(167, 19, 19, 1.0));
+            }
+            // Für nicht ausgewählte Elemente, verwende eine andere Farbe (z.B. Blau wie zuvor für Text)
+            return IconThemeData(color: Color.fromRGBO(193, 199, 48, 1.0));
+          }),
+            labelTextStyle: WidgetStateProperty.all(
+              TextStyle(fontSize: 14.0, fontWeight: FontWeight.w500, color: Color.fromRGBO(193, 199, 48, 1.0)),
+            ),
+          ),
+          child: NavigationBar(
+            onDestinationSelected: onDestinationSelected,
+            selectedIndex: _selectedIndex,
+            destinations: navigationDestinationList,
+            backgroundColor: Color.fromRGBO(167, 19, 19, 1.0),
+            
+          // // Farbe des Textes und Icons für nicht ausgewählte Elemente
+          // unselectedItemColor: Color.fromRGBO(43, 83, 167, 1.0),
+          
+            // indicatorColor: Color.fromRGBO(193, 199, 48, 1.0),
+          
+          ),
         ),
       ),
     );
