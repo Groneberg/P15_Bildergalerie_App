@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:image_gallery_app/screens/detail_screen.dart';
 
 // TODO scrollbar
 import 'package:image_gallery_app/data/posts.dart';
