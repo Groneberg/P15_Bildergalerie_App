@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:image_gallery_app/data/users.dart';
 
 class Profile extends StatelessWidget {
-  const Profile({super.key});
+  final int index;
+  const Profile({super.key, this.index = 0});
 
   @override
   Widget build(BuildContext context) {
@@ -14,24 +15,24 @@ class Profile extends StatelessWidget {
           children: [
             CircleAvatar(
               radius: 120.00,
-              backgroundImage: NetworkImage(starTrekUsers[0].profileImage),
+              backgroundImage: NetworkImage(starTrekUsers[index].profileImage),
             ),
             Text(
-              starTrekUsers[0].name,
+              starTrekUsers[index].name,
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w500
               ),
             ),
             Text(
-              starTrekUsers[0].profession,
+              starTrekUsers[index].profession,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w700
               ),
             ),
             Text(
-              starTrekUsers[0].description,
+              starTrekUsers[index].description,
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w400
